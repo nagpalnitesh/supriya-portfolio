@@ -270,9 +270,10 @@ figure {
     font-size: 30px;
 }
 
-#fh5co-features {
+
+/* #fh5co-features {
     background: #181D31;
-}
+} */
 
 #fh5co-features h2 {
     color: #fff;
@@ -350,6 +351,10 @@ figure {
     clear: both;
 }
 
+#fh5co-resume {
+    background: #181D31;
+}
+
 @media screen and (max-width: 768px) {
     #fh5co-about,
     #fh5co-resume,
@@ -372,7 +377,8 @@ figure {
     background: #181D31;
 }
 
-.fh5co-bg-dark .fh5co-heading h2 {
+.fh5co-bg-dark .fh5co-heading h2,
+.fh5co-bg-dark .fh5co-heading h3 {
     color: #fff !important;
 }
 
@@ -615,7 +621,7 @@ figure {
 }
 
 .timeline>li>.timeline-badge {
-    color: #fff;
+    color: #181D31;
     width: 44px;
     height: 44px;
     line-height: 50px;
@@ -625,7 +631,7 @@ figure {
     top: 40px;
     left: 50%;
     margin-left: -21px;
-    background-color: #181D31;
+    background-color: #fff;
     z-index: 100;
     display: table;
     -webkit-border-radius: 50%;
@@ -683,6 +689,7 @@ figure {
 
 .timeline-title {
     margin-top: 0;
+    color: #fff
 }
 
 .company {
@@ -1126,7 +1133,7 @@ figure {
 }
 
 #fh5co-footer {
-    padding: 20px 0;
+    padding: 10px 0;
     float: center;
     width: 100%;
     text-align: center;
