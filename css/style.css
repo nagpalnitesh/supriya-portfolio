@@ -703,6 +703,7 @@ figure {
 .timeline-body>p,
 .timeline-body>ul {
     margin-bottom: 0;
+    color: #bfbfbf;
 }
 
 .timeline-body>p+p {
