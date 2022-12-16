@@ -121,7 +121,7 @@ figure {
     background-size: cover;
     background-attachment: fixed;
     position: relative;
-    height: 600px;
+    height: 100vh;
     width: 100%;
 }
 
@@ -867,7 +867,6 @@ figure {
 
 .work .desc span {
     display: block;
-    color: #999999;
     font-size: 14px;
     -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
     transition: transform 0.3s, opacity 0.3s;
@@ -891,6 +890,7 @@ figure {
 }
 
 .work:hover .desc {
+    background-color: rgba(255, 255, 255, 0.35);
     opacity: 1;
 }
 
@@ -1101,7 +1101,8 @@ figure {
 
 #fh5co-consult .choose {
     width: 50%;
-    padding: 4em;
+    padding: 0 4em;
+    margin-top: 2em;
 }
 
 @media screen and (max-width: 768px) {
