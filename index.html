@@ -619,7 +619,7 @@
             </div>
             <div class="choose animate-box">
                 <h2>Contact</h2>
-                <form action="#">
+                <form method="post" id="myForm">
                     <div class="row form-group">
                         <div class="col-md-6">
                             <input type="text" id="fname" class="form-control" placeholder="Your firstname">
@@ -648,10 +648,13 @@
                             <textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <input type="submit" value="Send Message" class="btn btn-primary" onclick="sendEmail()">
+                    <div id="thankYouMsg" style="display:none">
+                        <p>Thank you for getting in touch! We appreciate you contacting us. We will get back in touch with you soon!Have a great day!
+                        </p>
                     </div>
-
+                    <div class="form-group">
+                        <input type="submit" value="Send Message" class="btn btn-primary" id="submitBtn">
+                    </div>
                 </form>
             </div>
         </div>
@@ -688,6 +691,46 @@
 
     <!-- Main -->
     <script src="js/main.js"></script>
+
+    <!-- Contact Form -->
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script type="text/javascript">
+        function resetForm() {
+            document.getElementById('thankYouMsg').style.display = 'block';
+            document.getElementById('myForm').reset();
+        }
+    </script>
+
+    <script>
+        var submitBtn = document.getElementById('submitBtn');
+        submitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            var msgVisible = document.getElementById('thankYouMsg');
+            var fname = document.getElementById('fname').value;
+            var lname = document.getElementById('lname').value;
+            var email = document.getElementById('email').value;
+            var subject = document.getElementById('subject').value;
+            var message = document.getElementById('message').value;
+            var body = `<h3>Please find the details below</h3>
+            <hr />
+            <span><strong>Name:</strong> ${fname} ${lname}</span><br />
+            <span><strong>Email Address:</strong> ${email}</span><br />
+            <span><strong>Message:</strong> ${message}</span>`;
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: 'supnagpal@gmail.com',
+                Password: "286BCDDE1717AF5A87D10137821C251BB679",
+                To: 'supnagpal@gmail.com',
+                From: 'supnagpal@gmail.com',
+                Subject: subject,
+                Body: body
+            })
+            resetForm();
+        })
+    </script>
+
 </body>
 
 </html>
